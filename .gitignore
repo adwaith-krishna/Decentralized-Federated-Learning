@@ -34,31 +34,44 @@ ENV/
 env.bak/
 venv.bak/
 
-# PyTorch & Model Artifacts
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# PyTorch & Model Checkpoints (large binary files)
 *.pt
 *.pth
 *.onnx
+*.bin
+*.safetensors
 checkpoints/
 saved_models/
 weights/
 
-# Output and logs
+# Logs & temporary run files
 *.log
 logs/
-results/
 outputs/
 runs/
 .pytest_cache/
+.coverage
+htmlcov/
 
-# Dataset cache / temp
-# Dataset/
+# Results: ignore raw dumps but allow tracking charts/plots if desired
+# Uncomment the line below if you want all of results/ ignored:
+# results/
 
-# IDE & OS files
+# Jupyter & Editor files
+.ipynb_checkpoints/
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+
+# OS generated files
 .DS_Store
 Thumbs.db
 desktop.ini
+ehthumbs.db
