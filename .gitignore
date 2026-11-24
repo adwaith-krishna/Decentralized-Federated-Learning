@@ -39,15 +39,10 @@ venv.bak/
 .env.*
 !.env.example
 
-# PyTorch & Model Checkpoints (large binary files)
-*.pt
-*.pth
-*.onnx
-*.bin
-*.safetensors
-checkpoints/
-saved_models/
-weights/
+# PyTorch & Model Checkpoints
+# Allow tracking the final best model checkpoint (~200KB)
+checkpoints/*
+!checkpoints/best_decentralized_model.pt
 
 # Logs & temporary run files
 *.log
@@ -57,10 +52,6 @@ runs/
 .pytest_cache/
 .coverage
 htmlcov/
-
-# Results: ignore raw dumps but allow tracking charts/plots if desired
-# Uncomment the line below if you want all of results/ ignored:
-# results/
 
 # Jupyter & Editor files
 .ipynb_checkpoints/
